@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New App</title>
+    <link rel="stylesheet" href="main.css" media="screen" title="no title">
+    <script>
+      function getCPUS() {
+        sendToMain('get-cpus')
+      }
+
+      onMainMessage('cpu-details', (event, details) => {
+        document.querySelector("#cpus").innerHTML = details
+      })
+    </script>
+  </head>
+  <body>
+    <pre id="cpus"></pre>
+    <button type="button" onClick="getCPUS()">Get CPU's</button>
+  </body>
+</html>
